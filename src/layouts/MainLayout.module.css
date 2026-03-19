@@ -1,0 +1,20 @@
+.shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgb(102 209 255 / 18%), transparent 30%),
+    radial-gradient(circle at right, rgb(255 160 0 / 14%), transparent 28%),
+    linear-gradient(180deg, #fffdf8 0%, #f4f7fb 100%);
+}
+
+.main {
+  width: min(1120px, calc(100% - 2rem));
+  padding: 2rem 0 4rem;
+  margin: 0 auto;
+}
+
+@media (width >= 900px) {
+  .main {
+    width: min(1120px, calc(100% - 4rem));
+    padding-top: 3rem;
+  }
+}

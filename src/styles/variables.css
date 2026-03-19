@@ -1,0 +1,9 @@
+:root {
+  --color-text: #14213d;
+  --color-muted: #526071;
+  --color-accent: #0f766e;
+  --color-border: rgb(148 163 184 / 24%);
+  --color-surface: rgb(255 255 255 / 72%);
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', palatino, serif;
+  --font-body: 'Avenir Next', 'Segoe UI', sans-serif;
+}

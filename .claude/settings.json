@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "rg \"from ['\\\"]@/features/\" src/shared src/features --glob '*.{ts,tsx}'"
+      }
+    ]
+  }
+}
