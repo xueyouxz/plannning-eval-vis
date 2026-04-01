@@ -1,0 +1,178 @@
+/* ── Timeline bar ──────────────────────────────────────────────────────────── */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  background: rgb(5 13 26 / 92%);
+  border-top: 1px solid #1e3a5f;
+  backdrop-filter: blur(6px);
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ── Play / pause button ───────────────────────────────────────────────────── */
+.playBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #1e3a5f;
+  background: rgb(59 130 246 / 15%);
+  color: #3b82f6;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+  padding: 0;
+}
+
+.playBtn:hover {
+  background: rgb(59 130 246 / 28%);
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+
+.playBtn svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ── Frame counter ─────────────────────────────────────────────────────────── */
+.frameCount {
+  flex-shrink: 0;
+  color: #e2e8f0;
+  font-size: 0.75rem;
+  min-width: 52px;
+  text-align: right;
+}
+
+.dimSlash {
+  color: #334155;
+}
+
+/* ── Slider ────────────────────────────────────────────────────────────────── */
+.sliderWrap {
+  flex: 1;
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Track */
+.slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: #1e3a5f;
+}
+
+.slider::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: #1e3a5f;
+}
+
+/* Thumb */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 2px solid #050d1a;
+  cursor: pointer;
+  margin-top: -5px;
+  transition: background 0.15s;
+}
+
+.slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 2px solid #050d1a;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #60a5fa;
+}
+
+/* Progress fill behind the slider track */
+.sliderFill {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  border-radius: 2px;
+  background: #3b82f6;
+  pointer-events: none;
+  z-index: 1;
+  transition: width 0.05s linear;
+}
+
+/* ── Time display ──────────────────────────────────────────────────────────── */
+.timeDisplay {
+  flex-shrink: 0;
+  min-width: 108px;
+  text-align: center;
+  color: #64748b;
+  letter-spacing: 0.03em;
+}
+
+/* ── Speed buttons ─────────────────────────────────────────────────────────── */
+.speedGroup {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.speedBtn {
+  background: transparent;
+  border: 1px solid #1e3a5f;
+  border-radius: 4px;
+  color: #475569;
+  font-family: inherit;
+  font-size: 0.64rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.speedBtn:hover {
+  color: #94a3b8;
+  border-color: #334155;
+}
+
+.activeSpeed {
+  color: #3b82f6;
+  border-color: #3b82f6;
+  background: rgb(59 130 246 / 12%);
+}

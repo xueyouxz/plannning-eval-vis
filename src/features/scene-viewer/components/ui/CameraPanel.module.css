@@ -1,0 +1,266 @@
+/* ── Camera Panel ──────────────────────────────────────────────────────────── */
+.panel {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-shrink: 0;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  background: #050d1a;
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.headerTitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.legendBar {
+  display: flex;
+  gap: 10px;
+  padding: 4px 10px 6px;
+  border-bottom: 1px solid #1a2c42;
+  overflow-x: auto;
+}
+
+.legendGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.legendGroupTitle {
+  font-size: 0.55rem;
+  color: #475569;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.56rem;
+  color: #64748b;
+}
+
+.legendSwatch {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  border: 1px solid rgb(148 163 184 / 25%);
+}
+
+/* ── 2×3 grid ────────────────────────────────────────────────────────────── */
+.grid {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  min-height: 0;
+}
+
+/* ── Individual camera cell ──────────────────────────────────────────────── */
+.cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  cursor: default;
+  background: #0a1628;
+  border: 1px solid #1a2c42;
+  border-radius: 4px;
+  transition: border-color 0.15s;
+}
+
+.cellActive {
+  cursor: pointer;
+}
+
+.cellActive:hover {
+  border-color: #3b82f6;
+}
+
+.mediaWrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.overlayCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.placeholder {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  background: #0a1628;
+}
+
+.placeholderIcon {
+  font-size: 1.1rem;
+  opacity: 0.15;
+}
+
+.label {
+  flex-shrink: 0;
+  padding: 2px 4px;
+  overflow: hidden;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #334155;
+  text-align: center;
+  text-overflow: ellipsis;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  background: #050d1a;
+  border-top: 1px solid #1a2c42;
+  transition: color 0.15s;
+}
+
+.cellActive:hover .label {
+  color: #60a5fa;
+}
+
+/* ── Modal overlay ─────────────────────────────────────────────────────────── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgb(5 13 26 / 88%);
+  backdrop-filter: blur(4px);
+  animation: fade-in 0.15s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  max-width: min(92vw, 1600px);
+  max-height: 90vh;
+  overflow: hidden;
+  cursor: default;
+  background: #0a1628;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 60%);
+  animation: scale-in 0.15s ease;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalHeader {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.modalTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.closeBtn {
+  padding: 2px 7px;
+  font-family: inherit;
+  font-size: 0.7rem;
+  color: #475569;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #1e3a5f;
+  border-radius: 4px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.closeBtn:hover {
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+.modalImageWrap {
+  position: relative;
+  width: min(92vw, 1600px);
+  height: calc(90vh - 48px);
+}
+
+.modalImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modalOverlayCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

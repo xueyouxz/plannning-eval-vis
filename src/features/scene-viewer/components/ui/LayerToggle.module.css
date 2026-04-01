@@ -1,0 +1,178 @@
+/* ── Layer Toggle Panel ────────────────────────────────────────────────────── */
+.panel {
+  display: flex;
+  flex-direction: column;
+  background: #050d1a;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #1e3a5f;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #334155;
+  text-transform: uppercase;
+}
+
+/* ── Section ─────────────────────────────────────────────────────────────── */
+.section {
+  padding: 6px 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.section + .section {
+  border-top: 1px solid #0f1f33;
+}
+
+.sectionLabel {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #1e3a5f;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+/* ── Toggle row ──────────────────────────────────────────────────────────── */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.1s;
+}
+
+.row:hover {
+  background: rgb(59 130 246 / 6%);
+}
+
+/* Colour swatch */
+.swatch {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.rowLabel {
+  flex: 1;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s, opacity 0.15s;
+  user-select: none;
+}
+
+.rowDetail {
+  flex-shrink: 0;
+  font-size: 0.58rem;
+  color: #64748b;
+  letter-spacing: 0.04em;
+}
+
+.sliderGroup {
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid #1e3a5f;
+  border-radius: 6px;
+  background: rgb(5 13 26 / 70%);
+}
+
+.sliderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.sliderLabel {
+  font-size: 0.62rem;
+  color: #94a3b8;
+  letter-spacing: 0.06em;
+}
+
+.sliderValue {
+  font-size: 0.62rem;
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.secondsSlider {
+  width: 100%;
+  accent-color: #3b82f6;
+}
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 2px;
+}
+
+.dimmed {
+  opacity: 0.35;
+}
+
+/* ── Custom toggle switch ────────────────────────────────────────────────── */
+.toggle {
+  flex-shrink: 0;
+  position: relative;
+  width: 26px;
+  height: 14px;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  background: #1e3a5f;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #334155;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.sliderOn {
+  background: rgb(59 130 246 / 30%);
+  border: 1px solid #3b82f6;
+}
+
+.sliderOn::before {
+  background: #3b82f6;
+  transform: translateX(12px);
+}

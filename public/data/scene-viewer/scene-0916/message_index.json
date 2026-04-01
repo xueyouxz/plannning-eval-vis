@@ -1,0 +1,222 @@
+{
+  "message_format": "BINARY",
+  "metadata": "metadata.glb",
+  "log_info": {
+    "start_time": 1538984233.547259,
+    "end_time": 1538984253.447765
+  },
+  "messages": [
+    {
+      "index": 0,
+      "timestamp": 1538984233.547259,
+      "file": "messages/000000.glb"
+    },
+    {
+      "index": 1,
+      "timestamp": 1538984234.047134,
+      "file": "messages/000001.glb"
+    },
+    {
+      "index": 2,
+      "timestamp": 1538984234.547551,
+      "file": "messages/000002.glb"
+    },
+    {
+      "index": 3,
+      "timestamp": 1538984234.947904,
+      "file": "messages/000003.glb"
+    },
+    {
+      "index": 4,
+      "timestamp": 1538984235.447825,
+      "file": "messages/000004.glb"
+    },
+    {
+      "index": 5,
+      "timestamp": 1538984235.947081,
+      "file": "messages/000005.glb"
+    },
+    {
+      "index": 6,
+      "timestamp": 1538984236.44697,
+      "file": "messages/000006.glb"
+    },
+    {
+      "index": 7,
+      "timestamp": 1538984236.946289,
+      "file": "messages/000007.glb"
+    },
+    {
+      "index": 8,
+      "timestamp": 1538984237.446737,
+      "file": "messages/000008.glb"
+    },
+    {
+      "index": 9,
+      "timestamp": 1538984237.947155,
+      "file": "messages/000009.glb"
+    },
+    {
+      "index": 10,
+      "timestamp": 1538984238.447571,
+      "file": "messages/000010.glb"
+    },
+    {
+      "index": 11,
+      "timestamp": 1538984238.948012,
+      "file": "messages/000011.glb"
+    },
+    {
+      "index": 12,
+      "timestamp": 1538984239.448435,
+      "file": "messages/000012.glb"
+    },
+    {
+      "index": 13,
+      "timestamp": 1538984239.948316,
+      "file": "messages/000013.glb"
+    },
+    {
+      "index": 14,
+      "timestamp": 1538984240.448191,
+      "file": "messages/000014.glb"
+    },
+    {
+      "index": 15,
+      "timestamp": 1538984240.947518,
+      "file": "messages/000015.glb"
+    },
+    {
+      "index": 16,
+      "timestamp": 1538984241.447959,
+      "file": "messages/000016.glb"
+    },
+    {
+      "index": 17,
+      "timestamp": 1538984241.947812,
+      "file": "messages/000017.glb"
+    },
+    {
+      "index": 18,
+      "timestamp": 1538984242.44773,
+      "file": "messages/000018.glb"
+    },
+    {
+      "index": 19,
+      "timestamp": 1538984242.947023,
+      "file": "messages/000019.glb"
+    },
+    {
+      "index": 20,
+      "timestamp": 1538984243.446332,
+      "file": "messages/000020.glb"
+    },
+    {
+      "index": 21,
+      "timestamp": 1538984243.946219,
+      "file": "messages/000021.glb"
+    },
+    {
+      "index": 22,
+      "timestamp": 1538984244.44664,
+      "file": "messages/000022.glb"
+    },
+    {
+      "index": 23,
+      "timestamp": 1538984244.946513,
+      "file": "messages/000023.glb"
+    },
+    {
+      "index": 24,
+      "timestamp": 1538984245.447134,
+      "file": "messages/000024.glb"
+    },
+    {
+      "index": 25,
+      "timestamp": 1538984245.947391,
+      "file": "messages/000025.glb"
+    },
+    {
+      "index": 26,
+      "timestamp": 1538984246.447815,
+      "file": "messages/000026.glb"
+    },
+    {
+      "index": 27,
+      "timestamp": 1538984246.948247,
+      "file": "messages/000027.glb"
+    },
+    {
+      "index": 28,
+      "timestamp": 1538984247.449248,
+      "file": "messages/000028.glb"
+    },
+    {
+      "index": 29,
+      "timestamp": 1538984247.949081,
+      "file": "messages/000029.glb"
+    },
+    {
+      "index": 30,
+      "timestamp": 1538984248.448966,
+      "file": "messages/000030.glb"
+    },
+    {
+      "index": 31,
+      "timestamp": 1538984248.948287,
+      "file": "messages/000031.glb"
+    },
+    {
+      "index": 32,
+      "timestamp": 1538984249.448168,
+      "file": "messages/000032.glb"
+    },
+    {
+      "index": 33,
+      "timestamp": 1538984249.948039,
+      "file": "messages/000033.glb"
+    },
+    {
+      "index": 34,
+      "timestamp": 1538984250.447364,
+      "file": "messages/000034.glb"
+    },
+    {
+      "index": 35,
+      "timestamp": 1538984250.947236,
+      "file": "messages/000035.glb"
+    },
+    {
+      "index": 36,
+      "timestamp": 1538984251.447166,
+      "file": "messages/000036.glb"
+    },
+    {
+      "index": 37,
+      "timestamp": 1538984251.94701,
+      "file": "messages/000037.glb"
+    },
+    {
+      "index": 38,
+      "timestamp": 1538984252.44689,
+      "file": "messages/000038.glb"
+    },
+    {
+      "index": 39,
+      "timestamp": 1538984252.947312,
+      "file": "messages/000039.glb"
+    },
+    {
+      "index": 40,
+      "timestamp": 1538984253.447765,
+      "file": "messages/000040.glb"
+    }
+  ],
+  "extensions": {
+    "nuscenes": {
+      "scene_token": "325cef682f064c55a255f2625c533b75",
+      "scene_name": "scene-0916",
+      "mapId": "singapore-queenstown"
+    }
+  }
+}

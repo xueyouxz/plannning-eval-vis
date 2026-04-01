@@ -1,0 +1,94 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  color: #e2e8f0;
+  background: #0f172a;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0 0 24px;
+}
+
+.btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: #2563eb;
+}
+
+.btn:disabled {
+  background: #334155;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: #450a0a;
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+.results {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+.section h2 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #1e293b;
+  vertical-align: top;
+}
+
+.table td:first-child {
+  width: 180px;
+  color: #94a3b8;
+  font-weight: 500;
+}

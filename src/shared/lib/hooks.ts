@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux'
-import type { AppDispatch, RootState } from './store'
-
-export const useAppDispatch = useDispatch.withTypes<AppDispatch>()
-export const useAppSelector = useSelector.withTypes<RootState>()
+// Re-export the app store hook so feature code can import from '@/shared/lib/hooks'
+// rather than reaching into the store file directly.
+export { useAppStore } from './store'

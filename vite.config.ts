@@ -22,7 +22,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react/jsx-runtime', 'react-dom', 'react-dom/client'],
           router: ['react-router-dom'],
-          redux: ['@reduxjs/toolkit', 'react-redux']
+          zustand: ['zustand']
         }
       }
     },

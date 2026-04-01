@@ -1,0 +1,264 @@
+/* ── Root container ────────────────────────────────────────────────────────── */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #050d1a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* ── Main content area for 3D view and timeline ────────────────────────────── */
+.mainContent {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* ── 3D canvas + timeline column ─────────────────────────────────────────── */
+.canvasColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.canvasWrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Multi-view camera strip below timeline ───────────────────────────────── */
+.cameraStrip {
+  height: clamp(160px, 24dvh, 220px);
+  flex-shrink: 0;
+  border-top: 1px solid #1e3a5f;
+  overflow: hidden;
+}
+
+/* ── Right-side dock and expandable panels ───────────────────────────────── */
+.overlayDock {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.overlayPanel {
+  width: 260px;
+  max-height: calc(100vh - 360px);
+  overflow: auto;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  background: rgb(5 13 26 / 88%);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 24px rgb(2 6 23 / 40%);
+  transform-origin: right center;
+  animation: panel-slide-in 0.2s ease;
+}
+
+.overlayIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overlayIconBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #1e3a5f;
+  background: rgb(5 13 26 / 88%);
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.overlayIconBtn:hover {
+  border-color: #3b82f6;
+  color: #dbeafe;
+}
+
+.overlayIconActive {
+  border-color: #3b82f6;
+  color: #60a5fa;
+  background: rgb(59 130 246 / 16%);
+}
+
+@keyframes panel-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* ── Loading state ─────────────────────────────────────────────────────────── */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #050d1a;
+  color: #64748b;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  gap: 16px;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #1e3a5f;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #475569;
+}
+
+/* ── Error state ────────────────────────────────────────────────────────────── */
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #050d1a;
+  color: #ef4444;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  font-size: 0.875rem;
+  padding: 24px;
+  text-align: center;
+}
+
+/* ── Info overlay (top-left corner over canvas) ─────────────────────────────── */
+.infoOverlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  background: rgb(5 13 26 / 80%);
+  border: 1px solid #1e3a5f;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  min-width: 180px;
+}
+
+.infoOverlay strong {
+  color: #e2e8f0;
+}
+
+.highlight {
+  color: #3b82f6;
+}
+
+/* ── Camera-mode buttons (used inside dock panel) ───────────────────────── */
+.cameraModes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+}
+
+.modeBtn {
+  background: rgb(5 13 26 / 80%);
+  border: 1px solid #1e3a5f;
+  border-radius: 5px;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    border-color 0.15s,
+    background 0.15s;
+  backdrop-filter: blur(4px);
+}
+
+.modeBtn:hover {
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+.modeBtn.active {
+  color: #3b82f6;
+  border-color: #3b82f6;
+  background: rgb(59 130 246 / 12%);
+}
+
+/* ── Perf panel ───────────────────────────────────────────────────────────── */
+.perfPanel {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perfTitle {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.12em;
+}
+
+.perfRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.perfLabel {
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+.perfValue {
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* ── Responsive: narrow screens ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cameraStrip {
+    height: clamp(132px, 22dvh, 168px);
+  }
+
+  .overlayPanel {
+    width: min(240px, calc(100vw - 80px));
+    max-height: 48vh;
+  }
+}

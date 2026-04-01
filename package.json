@@ -16,13 +16,20 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:style": "stylelint \"src/**/*.{css,less,scss}\"",
+    "test": "vitest run",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json,md}\"",
     "pre-check": "tsc -b && npx lint-staged",
     "prepare": "husky"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["eslint --max-warnings=0", "prettier --write"],
-    "src/**/*.{css,less,scss}": ["stylelint --fix", "prettier --write"]
+    "src/**/*.{ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier --write"
+    ],
+    "src/**/*.{css,less,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
   },
   "config": {
     "commitizen": {
@@ -33,19 +40,24 @@
     }
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.10.1",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "d3": "^7.9.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-redux": "^9.2.0",
-    "react-router-dom": "^7.9.5"
+    "react-router-dom": "^7.9.5",
+    "three": "^0.183.2",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.18.0",
+    "@types/d3": "^7.4.3",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.183.1",
     "@vitejs/plugin-react": "^4.3.4",
     "cz-customizable": "^7.4.0",
     "eslint": "^9.18.0",
@@ -60,6 +72,7 @@
     "stylelint-config-standard": "^37.0.0",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.19.0",
-    "vite": "^7.0.0"
+    "vite": "^7.0.0",
+    "vitest": "^4.1.2"
   }
 }
