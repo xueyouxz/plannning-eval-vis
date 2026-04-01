@@ -33,6 +33,7 @@ interface SceneViewerProps {
 export default function SceneViewer({ sceneUrl }: SceneViewerProps) {
   const { metadata, dataManager, loading, error } = useSceneData(sceneUrl)
   const [activeOverlayPanel, setActiveOverlayPanel] = useState<'legend' | 'camera' | 'perf' | null>(null)
+  const [isCameraPanelOpen, setIsCameraPanelOpen] = useState(false)
 
   // Load frame data reactively whenever frameIndex changes
   useFrameData(dataManager)
@@ -89,14 +90,28 @@ export default function SceneViewer({ sceneUrl }: SceneViewerProps) {
                 activePanel={activeOverlayPanel}
                 onToggle={setActiveOverlayPanel}
               />
+
+              <div className={styles.cameraPanelToggleWrap}>
+                <button
+                  type="button"
+                  className={`${styles.cameraPanelToggleBtn} ${isCameraPanelOpen ? styles.cameraPanelToggleActive : ''}`}
+                  onClick={() => setIsCameraPanelOpen((prev) => !prev)}
+                  aria-label={isCameraPanelOpen ? '隐藏相机视图' : '显示相机视图'}
+                  title={isCameraPanelOpen ? '隐藏相机视图' : '显示相机视图'}
+                >
+                  📸
+                </button>
+              </div>
             </div>
 
             <TimelineBar timestamps={timestamps} />
-          </div>
-        </div>
 
-        <div className={styles.cameraStrip}>
-          <CameraPanel />
+            {isCameraPanelOpen && (
+              <div className={styles.cameraStrip}>
+                <CameraPanel />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </SceneContext.Provider>

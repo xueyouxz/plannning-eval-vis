@@ -33,12 +33,44 @@
   min-height: 0;
 }
 
-/* ── Multi-view camera strip below timeline ───────────────────────────────── */
+/* ── Multi-view camera strip below timeline (expanded) ───────────────────── */
 .cameraStrip {
   height: clamp(160px, 24dvh, 220px);
   flex-shrink: 0;
   border-top: 1px solid #1e3a5f;
   overflow: hidden;
+}
+
+/* ── Camera panel toggle in 3D view bottom-left ───────────────────────────── */
+.cameraPanelToggleWrap {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 11;
+}
+
+.cameraPanelToggleBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #1e3a5f;
+  background: rgb(5 13 26 / 88%);
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.cameraPanelToggleBtn:hover {
+  border-color: #3b82f6;
+  color: #dbeafe;
+}
+
+.cameraPanelToggleActive {
+  border-color: #3b82f6;
+  color: #60a5fa;
+  background: rgb(59 130 246 / 16%);
 }
 
 /* ── Right-side dock and expandable panels ───────────────────────────────── */
